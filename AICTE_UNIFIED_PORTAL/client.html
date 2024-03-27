@@ -1,0 +1,52 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing styles and meta tags here -->
+</head>
+<body>
+
+<div class="container">
+    <!-- Your existing HTML form here -->
+
+    <!-- Display area for the generated curriculum -->
+    <div id="generatedCurriculum"></div>
+</div>
+
+<script>
+    async function generateCurriculum() {
+        var domain = document.getElementById("domain").value;
+        var outcomes = document.getElementById("outcomes").value;
+        var courseName = document.getElementById("courseName").value;
+
+        try {
+            // Make a request to your server to generate curriculum using GPT-3
+            const response = await fetch('/generate-curriculum', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ domain, outcomes, courseName }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to generate curriculum');
+            }
+
+            const data = await response.json();
+
+            // Update the HTML with the generated curriculum
+            document.getElementById("generatedCurriculum").innerHTML = `
+                <h3>Generated Curriculum</h3>
+                <p>${data.curriculum}</p>
+            `;
+        } catch (error) {
+            console.error('Error generating curriculum:', error);
+            // Handle error if needed
+        }
+    }
+</script>
+
+</body>
+</html>

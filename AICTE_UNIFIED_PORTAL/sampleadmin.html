@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .top-bar {
+    background-color: darkblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .section {
+    height: 500px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .section:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .home-section {
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+
+.background-image {
+  background-image: url('im3.jpeg'); /* Replace 'background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(244, 248, 220);
+}
+
+.content h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content h2 {
+  font-size: 15px;
+  font-style: italic;
+}
+
+
+.about-section {
+  position: relative; /* Set position to relative to allow absolute positioning */
+}
+
+.backimage {
+  background-image: url('im1.jpeg'); /* Replace 'background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-box {
+  background-color: rgba(0, 0, 0, 0.8); /* Add opacity to the background */
+  color: white;
+  padding: 30px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.info-box p {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+
+
+.course-section {
+  position: relative; /* Set position to relative to allow absolute positioning */
+}
+
+.backimage2 {
+  background-image: url('im4.jpg'); /* Replace 'course_background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchInput {
+  padding: 20px;
+  border-radius: 50px;
+  border: 3px solid #ccc;
+  margin-right: 10px;
+  width: 500px;
+}
+
+#showButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.curriculum-section {
+  position: relative; /* Set position to relative to allow absolute positioning */
+}
+
+.backimage3 {
+  background-image: url('im5.jpeg'); /* Replace 'curriculum_background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Decreased height */
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#designButton {
+  padding: 30px 30px; /* Increase padding for larger size */
+  border-radius: 8px; /* Increase border radius for rounded corners */
+  background-color: darkblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width:500px
+}
+
+
+
+
+
+.syllabus-section {
+  position: relative; /* Set position to relative to allow absolute positioning */
+}
+
+.backimage4 {
+  background-image: url('im6.jpeg'); /* Replace 'syllabus_background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Adjust height as needed */
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; /* Center align text */
+}
+
+h4 {
+  color: rgb(2, 2, 2);
+}
+
+#searchButton {
+  padding: 15px 30px; /* Increase padding for larger size */
+  border-radius: 8px; /* Increase border radius for rounded corners */
+  background-color: rgb(4, 4, 91);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.contact-section {
+  position: relative; /* Set position to relative to allow absolute positioning */
+}
+
+.backimage5 {
+  background-image: url('im7.jpeg'); /* Replace 'contact_background.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Adjust height as needed */
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; /* Center align text */
+}
+
+.contact-info {
+  color: white;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<body>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="logoone.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#course">Course</a></li>
+        <li><a href="#curriculum">Curriculum Design</a></li>
+        <li><a href="#syllabus">Syllabus Quest</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <form action="index.html"> 
+          <button type="log out"> log out </button> </form>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="home" class="section home-section">
+    <div class="background-image">
+      <div class="content">
+        <h1>All India Council for Technical Education 
+            (AICTE) Unified Portal</h1>
+        <h2>Where excellence meets innovation</h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="section about-section">
+    <div class="backimage">
+      <div class="content">
+        <div class="info-box">
+          <h1>About Us</h1>
+          <h3>The All India Council for Technical Education is a statutory body, and a national-level council for technical education, under the Department of Higher Education.</h3>
+          <a href='useranaly.html'><button onclick="show anayltics">user anayltics</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <div id="course" class="section course-section">
+    <div class="backimage2">
+      <div class="content">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Type here...">
+          <a href="#">
+          <button id="showButton">Show</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <div id="curriculum" class="section curriculum-section">
+    <div class="backimage3">
+      <div class="content">
+      <h3> Curriculum Designing </h3>
+      <a href="klm.html">
+        <button id="designButton">Click here to design a curriculum</button>
+    </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  <div id="syllabus" class="section syllabus-section">
+    <div class="backimage4">
+      <div class="content">
+        <h4>Search Quest (Resource Repository)</h4>
+        <a href="cpage.html">
+            <button id="searchButton">Click here to search for a course</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div id="contact" class="section contact-section">
+    <div class="backimage5">
+      <div class="content">
+        <div class="contact-info">
+          <h3>Contact Information:</h3>
+          <p>All India Council for Technical Education (AICTE)<br>Nelson Mandela Marg, Vasant Kunj,<br>New Delhi - 110070, India</p>
+          <p>Phone: 011-29581333 (General Enquiry)<br>Fax: 011-29581300</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  <script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+  
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum Design</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('im1.jpeg'); /* Replace 'background_image.jpg' with your image file */
+        background-size: cover;
+        background-position: center;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8); /* Add transparency for better readability */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #06101b;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    select, input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Curriculum Design</h1>
+    <div class="form-group">
+        <label for="domain">Enter Domain:</label>
+        <select id="domain">
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="it">IT</option>
+            <option value="eee">EEE</option>
+            <option value="ds">DS</option>
+            <option value="ai">AI</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="outcomes">Course Outcomes:</label>
+        <select id="outcomes">
+            <option value="co1">CO1</option>
+            <option value="co2">CO2</option>
+            <option value="co3">CO3</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="course">Course name:</label>
+        <select id="course">
+            <option value="java">Java Programming</option>
+            <option value="mech">mechanical</option>
+            <option value="dbms">database management system</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    <button onclick="generateCurriculum()">Generate</button>
+    <div id="pdfLinkContainer"></div>
+</div>
+
+
+<script>
+    function generateCurriculum() {
+        var dropdownValue = document.getElementById('course').value;
+        var pdfLink = '';
+
+        // Assigning appropriate PDF link based on the selected course
+        if (dropdownValue === 'java') {
+            pdfLink = 'java.jpg';
+        } else if (dropdownValue === 'mech') {
+            pdfLink = 'mech.jpg';
+        } else if (dropdownValue === 'dbms') {
+            pdfLink = 'dbms.jpg';
+        }
+        // Displaying the PDF link
+        var pdfLinkContainer = document.getElementById('pdfLinkContainer');
+        pdfLinkContainer.innerHTML = '<a href="' + pdfLink + '" target="_blank">Download ' + dropdownValue + '</a>';
+    }
+</script>
+
+</body>
+</html>

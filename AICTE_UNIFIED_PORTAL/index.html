@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AICTE Unified Portal</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('annie-spratt-ORDz1m1-q0I-unsplash.jpg'); /* Background image */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: space-between; /* Align content to the left and right */
+        min-height: 100vh;
+        position: relative; /* Make sure to position relative for absolute positioning within */
+    }
+    #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+        z-index: -1;
+    }
+    #logo {
+        width: 80px; /* Adjust size as needed */
+        height: 80px; /* Adjust size as needed */
+        margin-top: 20px; /* Adjust margin as needed */
+        margin-left: 50px; /* Adjust margin as needed */
+    }
+    #heading {
+        width: 700px;
+        height: 100px;
+        text-align: center; /* Center horizontally */
+        margin-top: 20px; /* Adjust margin as needed */
+        margin-left: -85px;
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-top: 30px;
+        align-content: center;
+        align-items: center;
+        background-color: transparent;
+        color: #fff;
+    }
+    .container {
+        width: 550px;
+        height: 210px;
+        margin-top: 250px; /* Push to bottom */
+        margin-left: -1000px; /* Align to right */
+        margin-right: 480px;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    #sub-heading {
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+    .btn {
+        display: inline-flex;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff; /* Blue button */
+        color: #fff;
+        text-decoration: none;
+    }
+    .btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+</style>
+</head>
+<body>
+
+<div id="overlay"></div>
+
+<img id="logo" src="https://project1pragati.s3.ap-south-1.amazonaws.com/project/assets/images/AICTE-logo.png" alt="Company Logo">
+
+<h1 id="heading">Welcome to AICTE Unified Portal</h1>
+
+<div class="container">
+    
+    <p>Select your role and sign up or login</p>
+    <div>
+        <a href="https://aicte-demo.auth.ap-south-1.amazoncognito.com/login?client_id=3arsrqpngnndh4i7lfj27n3iq0&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmybucketforusersstudents.s3.ap-south-1.amazonaws.com%2FAICTE_UNIFIED_PORTAL%2Fsamplestudent.html" class="btn">Student</a>
+        <a href="https://sample-demo.auth.ap-south-1.amazoncognito.com/oauth2/authorize?client_id=77bapfb335a3s1t5vffcorf3lj&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmybucketforusersstudents.s3.ap-south-1.amazonaws.com%2FAICTE_UNIFIED_PORTAL%2Fsample.html" class="btn">Curriculum Developer</a>
+        <a href="https://abcd123432.auth.ap-south-1.amazoncognito.com/oauth2/authorize?client_id=3c2i7jlk9bd5avgs7ed030rnci&response_type=code&scope=aws.cognito.signin.user.admin&redirect_uri=https%3A%2F%2Fmybucketforusersstudents.s3.ap-south-1.amazonaws.com%2FAICTE_UNIFIED_PORTAL%2Fsampleadmin.html" class="btn">Administrator</a>
+    </div>
+</div>
+
+</body>
+</html>

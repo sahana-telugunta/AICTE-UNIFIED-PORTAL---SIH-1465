@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with User Analytics</title>
+    <!-- Google Analytics Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body bgcolor="#CED2CC">
+    <h1>USER ANAYLTICS</h1>
+
+    <p>TRACKING THE USER COURSES COMPLETED AND RECOMMENDED SKILLS TO ACQUIRE.</p>
+
+    <!-- Canvas for Pie Chart -->
+    <div style="width:40%; float: left;">
+        <h2>ENROLLED COURSES</h2>
+        <canvas id="analyticsPieChart" width="400" height="400"></canvas>
+    </div>
+
+    <!-- Canvas for Bar Chart -->
+    <div style="width: 50%; float: right;">
+        <h2>SUGGESTIONS TO ENROLL</h2>
+        <canvas id="analyticsBarChart" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        // Simulated analytics data
+        var analyticsData = {
+            pageViews: 500,
+            buttonClicks: 200,
+            formSubmissions: 100
+        };
+
+        // Function to update the charts
+        function updateCharts() {
+            updatePieChart();
+            updateBarChart();
+        }
+
+        // Function to update the pie chart
+        function updatePieChart() {
+            var ctx = document.getElementById('analyticsPieChart').getContext('2d');
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['ENROLLED', 'ONGOING', 'COMPLETED'],
+                    datasets: [{
+                        label: '# of Events',
+                        data: [analyticsData.pageViews, analyticsData.buttonClicks, analyticsData.formSubmissions],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    // Add options here
+                }
+            });
+        }
+
+        // Function to update the bar chart
+        function updateBarChart() {
+            var ctx = document.getElementById('analyticsBarChart').getContext('2d');
+            var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['TECHNICAL', 'NON-TECHNICAL', 'HYBRID COURSES'],
+                    datasets: [{
+                        label: '# of Events',
+                        data: [analyticsData.pageViews, analyticsData.buttonClicks, analyticsData.formSubmissions],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    // Add options here
+                }
+            });
+        }
+
+        // Initial update of the charts
+        updateCharts();
+    </script>
+</body>
+</html>
