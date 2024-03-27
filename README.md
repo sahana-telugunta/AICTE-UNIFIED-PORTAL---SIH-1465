@@ -1,5 +1,6 @@
 # AICTE-UNIFIED-PORTAL---SIH-1465
-Developed a solution for smart india hackathon 1465 problem statement using frontend technologies html,css,java script and backend using AWS services.
+Developed a solution for smart india hackathon 1465 problem statement using frontend technologies html,css,java script and backend using AWS services such as DYNAMO DB,IAM,SNS,GATEWAY and so forth.
+This cloud based solution leads to high security, scalability and high perfoemance.
 TITLE: A unified portal for developing a model Curriculum for all the AICTE Approved Institutes
 DESCRIPTION: The All India Council for Technical Education (AICTE) is responsible for 
 formulating and maintaining the curriculum standards for technical education in India. A unified portal is 
